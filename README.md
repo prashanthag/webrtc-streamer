@@ -38,7 +38,16 @@ It is based on :
 Build
 ===============
 
+
+For Ubuntu 16.04
+	sudo apt install autoconf libtool xorg-dev
+	add -lX11 webrtc/src/MakeFile (this after fetch below)
+
 Build WebRTC with H264 support
+
+	Install depot_tools
+		git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
+		export PATH=`pwd`/depot_tools:"$PATH"
 -------
 	mkdir ../webrtc
 	pushd ../webrtc
