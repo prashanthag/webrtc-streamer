@@ -1,0 +1,12 @@
+ubuntu 16.04 
+
+sudo apt-get install autoconf libtool xorg-dev
+
+vim webrtc/src/Makefile add -lX11 
+
+mkdir ../webrtc
+pushd ../webrtc
+fetch webrtc
+gn gen out/Release --args='is_debug=false use_custom_libcxx=false rtc_use_h264=true ffmpeg_branding="Chrome" rtc_include_tests=false'
+ninja -C out/Release
+popd
